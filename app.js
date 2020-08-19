@@ -20,7 +20,8 @@ let weapons = [
 
 function play(playerChoice) {
   let compChoice = randomChoice();
-debugger
+
+  draw(playerChoice, compChoice)
   if (playerChoice == compChoice) {
     ties++;
   } else if (playerChoice == 'rock' && compChoice == 'scissors') {
@@ -39,9 +40,19 @@ debugger
   setScore();
 }
 
-function draw() {
-  let playerImgElem = document.getElementById("playerImg")
-  let compImgElem = document.getElementById("compImg")
+function draw(pChoice, cChoice) {
+  //get reference for image elements
+  let playerImgElem = document.getElementById("playerImg");
+  let compImgElem = document.getElementById("compImg");
+
+  //get reference for weapons
+  let playerObj = weapons.find(w => w.name == pChoice);
+  let compObj = weapons.find(w => w.name == cChoice);
+
+  //draw inner HTML of image elements
+  playerImgElem.innerHTML = `<img src="${playerObj.img}" height="500px" width="500px">`;
+  compImgElem.innerHTML = `<img src="${compObj.img}" height="500px" width="500px">`
+
 }
 
 function setScore() {
@@ -55,9 +66,14 @@ function setScore() {
 }
 
 function randomChoice() {
-  let randomNum = Math.floor(Math.random() * (weapons.length - 1));
+  let randomNum = Math.floor(Math.random() * (weapons.length - 0.01));
   let choice = weapons[randomNum].name;
   return choice
 }
+
+function start() {
+  
+}
+
 
 setScore()

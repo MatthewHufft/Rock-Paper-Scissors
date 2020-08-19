@@ -4,11 +4,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
   <title>Rock Paper Scissors</title>
 </head>
 <body>
   <header class="container-fluid bg-primary">
-    <div class="row">
+    <div class="row pt-4">
       <div class="col-3 offset-2"  id="wins">
         <h2>Wins: </h2>
       </div>
@@ -21,16 +22,21 @@
     </div>
   </header>
   <main class="container-fluid">
-    <div class="row">
-      <div id="playerImg" class="col-5 offset-2">
-        <img src="//placehold.it/500x500" alt="">
+    <div class="row mt-3">
+      <div id="playerImg" class="col-4 offset-1">
+        
       </div>
-      <div id="compImg" class="col-5">
-        <img src="//placehold.it/500x500" alt="">
+      <div class="col-2 d-flex align-items-center justify-content-center">
+        <div class="bg-warning border border-danger p-2 rounded-circle">
+          <h1>VS</h1>
+        </div>
+      </div>
+      <div id="compImg" class="col-4">
+        
       </div>
     </div>
-    <div class="row">
-      <div class="col-8 offset-2 d-flex justify-content-center">
+    <div class="row mt-5">
+      <div id="buttons" class="col-8 offset-2 d-flex justify-content-center">
         <button class="btn btn-primary m-3" onclick="play('rock')">Rock</button>
         <button class="btn btn-primary m-3" onclick="play('paper')">Paper</button>
         <button class="btn btn-primary m-3" onclick="play('scissors')">Scissors</button>
