@@ -72,7 +72,21 @@ function randomChoice() {
 }
 
 function start() {
-  
+  // Buttons
+  let btnContainer = document.getElementById("buttons");
+  btnContainer.innerHTML = `
+    <button class="btn btn-primary m-3" onclick="play('rock')">Rock</button>
+    <button class="btn btn-primary m-3" onclick="play('paper')">Paper</button>
+    <button class="btn btn-primary m-3" onclick="play('scissors')">Scissors</button>
+  `;
+  // VS sign in the middle
+  let vsElem = document.getElementById("versus");
+  vsElem.innerHTML = `<h1>VS</h1>`;
+  // draw pseudo images for choose your character
+  let playerUnknown = document.getElementById('playerImg');
+  playerUnknown.innerHTML = `<img src="./character.jpg" height="500px" width="500px">`
+  let compUnknown = document.getElementById('compImg');
+  compUnknown.innerHTML = `<img src="./character.jpg" height="500px" width="500px">`
 }
 
 
